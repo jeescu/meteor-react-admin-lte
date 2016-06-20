@@ -13,7 +13,7 @@ export default class Index extends Component {
     			return <Home />
     		}
 
-    		return this.props.children ;
+    		return this.props.children;
     	}
 
         return (

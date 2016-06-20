@@ -6,7 +6,7 @@ import Index from '../../ui/components/index.jsx';
 import { Home } from '../../ui/components/home.jsx';
 import SignIn from '../../ui/components/sign_in.jsx';
 import { SignUp } from '../../ui/components/sign_up.jsx';
-import { Dashboard } from '../../ui/components/dashboard.jsx';
+import Dashboard from '../../ui/components/dashboard/dashboard.jsx';
 
 Meteor.startup( () => {
 	render( 
@@ -14,8 +14,8 @@ Meteor.startup( () => {
 			<Route path="/" component={ Index } children={ Home }>
 				<Route path="/signin" component={SignIn} />
 				<Route path="/signup" component={SignUp} />
-				<Route path="/dashboard" component={Dashboard} />
 			</Route>
+			<Route path="/dashboard" component={Dashboard} />
 		</Router>,
 		document.getElementById( 'react-root' )
 	);
