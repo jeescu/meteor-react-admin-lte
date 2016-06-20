@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import { Home } from './home.jsx';
+import { PublicHeader } from './layouts/public/public_header.jsx';
  
 export default class Index extends Component {
 
@@ -16,10 +17,11 @@ export default class Index extends Component {
     	}
 
         return (
-            <div>
-				<h1>Index page Header</h1>
-					{ getChildren() }
-				<h1>Index page Footer</h1>
+            <div className="wrapper public-layout">
+				<PublicHeader />
+                <div className="container">
+				    { getChildren() }
+                </div>
 			</div>
         );
     }

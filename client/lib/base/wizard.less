@@ -1,0 +1,159 @@
+/*! Layout
+-------------------------------------*/
+html,body {
+	width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.content-title {
+	text-align:center;
+	margin-top:20px;
+	margin-bottom:20px;  
+	font-size: 30px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 100;
+}
+
+.first-time-wizard-style {
+	padding: 0px;
+    font-family: 'Avenir', sans-serif;
+    font-size: 18px;
+    color: #666;
+}
+
+.first-time-wizard-style p {
+	margin-top: 20px;
+}
+
+.first-time-wizard-style .content-wrapper .content #rightCol .radio-label label {
+	text-align: center !important;
+    font-weight: bold;
+}
+
+.image-wizard-start {
+	margin : 40px 0 0 0;
+}
+
+.form-group.row label {
+	text-align: right;
+	margin-top: 7px;
+	margin-right: 20px;
+	font-weight: 100;
+}
+
+.form-group .form-label {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.radio label input {
+	margin-top: 0px;
+}
+
+.form-group .unit-holder {
+	display: block;
+	padding-top: 7px;
+}
+
+.form-group .unit-holder.spc {
+	margin-top: 35px;
+}
+
+.form-radio .radio.center {
+	text-align: center;
+}
+
+
+
+#leftCol {
+	background: #f5f5f5;
+	box-shadow: 3px 3px 2px #d7d7d7;
+}
+
+.radio label {
+	font-weight: 100;
+	text-align: left;
+}
+
+.col-md-12.radio-label,
+.col-xs-12.radio-label {
+	text-align: center;
+}
+
+.step-marker .marker {
+	opacity: .4;
+	border-bottom: #d7d7d7 solid 1px;
+	padding: 15px 10px 15px 35px;
+	font-size: 25px;
+}
+
+.form-group {
+	margin-top: 10px
+}
+
+.step-marker .marker img {
+	margin-top: -6px;
+}
+
+.step-marker .marker.current {
+	opacity: 1;
+}
+
+.step-marker .marker.passed {
+	background-color: #ffffff;
+	opacity: 1;
+	padding-bottom: 10px;
+}
+
+.passed .checked-holder {
+ 	display: block;
+}
+
+.checked-holder {
+ 	display: none;
+}
+
+.button-container .button-off,
+.button-container:hover .button-on {
+	display: none;
+}
+
+.button-container:hover .button-off {
+	display: block;
+}
+
+
+@media (max-width: 767px) {
+	.content-title {
+		margin: 10px;
+	}	
+}
+
+@media (min-width: 768px) {
+	
+	.checked-holder {	
+		padding: 0 10px 0 10px;
+	}
+}
+
+@media (min-width: 992px) {
+	
+	.form-group .form-label {
+		text-align: right;
+		padding-top: 7px;
+	}
+
+	.form-group .unit-holder.spc {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 536px) {
+	
+	.form-group .form-label {
+		text-align: center;
+		margin-bottom: 10px;
+	}	
+}

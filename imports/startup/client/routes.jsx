@@ -19,4 +19,6 @@ Meteor.startup( () => {
 		</Router>,
 		document.getElementById( 'react-root' )
 	);
+
+	$('body').addClass('skin-blue');
 });
