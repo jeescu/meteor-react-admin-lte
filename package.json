@@ -1,5 +1,5 @@
 {
-  "name": "meteor-react-adminLTE",
+  "name": "airpayment",
   "private": true,
   "scripts": {
     "start": "meteor run"
