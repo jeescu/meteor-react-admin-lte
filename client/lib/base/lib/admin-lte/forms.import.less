@@ -3,22 +3,18 @@
  * ---------------
  */
 .form-control {
-  .border-radius(@input-radius)!important;  
+  .border-radius(@input-radius);
   box-shadow: none;
   border-color: @gray;
   &:focus {
-    border-color: @light-blue !important;
+    border-color: @light-blue;
     box-shadow: none;
   }
-  &::-moz-placeholder {
-    color: #bbb;
-    opacity: 1;
-  }
-  &:-ms-input-placeholder {
-    color: #bbb;
-  }
+  &::-moz-placeholder,
+  &:-ms-input-placeholder,
   &::-webkit-input-placeholder {
     color: #bbb;
+    opacity: 1;
   }
 
   &:not(select) {
@@ -34,8 +30,11 @@
       color: @green;
     }
     .form-control {
-      border-color: @green !important;
+      border-color: @green;
       box-shadow: none;
+    }
+    .help-block {
+      color: @green;
     }
   }
 
@@ -44,8 +43,11 @@
       color: @yellow;
     }
     .form-control {
-      border-color: @yellow !important;
+      border-color: @yellow;
       box-shadow: none;
+    }
+    .help-block {
+      color: @yellow;
     }
   }
 
@@ -54,8 +56,11 @@
       color: @red;
     }
     .form-control {
-      border-color: @red !important;
+      border-color: @red;
       box-shadow: none;
+    }
+    .help-block {
+      color: @red;
     }
   }
 }
@@ -68,6 +73,7 @@
     background-color: #fff;
   }
 }
+
 /* button groups */
 .btn-group-vertical {
   .btn {
@@ -79,4 +85,21 @@
 
 .icheck > label {
   padding-left: 0;
+}
+
+/* support Font Awesome icons in form-control */
+.form-control-feedback.fa {
+  line-height: @input-height-base;
+}
+
+.input-lg + .form-control-feedback.fa,
+.input-group-lg + .form-control-feedback.fa,
+.form-group-lg .form-control + .form-control-feedback.fa {
+  line-height: @input-height-large;
+}
+
+.input-sm + .form-control-feedback.fa,
+.input-group-sm + .form-control-feedback.fa,
+.form-group-sm .form-control + .form-control-feedback.fa {
+  line-height: @input-height-small;
 }
