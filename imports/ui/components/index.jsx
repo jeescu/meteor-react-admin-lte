@@ -6,21 +6,16 @@ import { PublicHeader } from './layouts/public/public_header.jsx';
 export default class Index extends Component {
 
     render() {
-    	console.log('render index!')
 
-    	var getChildren = () => {
-    		if (!this.props.children ) {
-    			return <Home />
-    		}
-
-    		return this.props.children;
+    	var getChildRoute = () => {
+    		return this.props.children ? this.props.children : <Home />;
     	}
 
         return (
             <div className="wrapper public-layout">
 				<PublicHeader />
                 <div className="container">
-				    { getChildren() }
+				    { getChildRoute() }
                 </div>
 			</div>
         );
