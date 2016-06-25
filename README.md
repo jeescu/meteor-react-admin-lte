@@ -2,7 +2,7 @@
 
 Incorporates the AdminLTE 2.3.3 styles.
 
-![Boilerplate screenshot](blob:https%3A//drive.google.com/fad564e8-f34a-4d7d-bd7e-49e60be2ff23)
+![Boilerplate screenshot](https://raw.githubusercontent.com/jeescu/meteor-react-admin-lte/master/public/img/Screenshot%20from%202016-06-24%2009%3A52%3A37.png)
 
 ### Docs
 * [AdminLTE 2](http://almsaeedstudio.com/themes/AdminLTE/documentation/index.html)
