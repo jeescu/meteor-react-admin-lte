@@ -71,14 +71,6 @@ export default class SignIn extends Component {
 						</div>
 					</form>
 
-                    <div className="social-auth-links text-center">
-                        <p>- OR -</p>
-                        <a href="#" className="btn btn-block btn-social btn-facebook btn-flat"><i className="fa fa-facebook"></i> Sign in using
-                            Facebook</a>
-                        <a href="#" className="btn btn-block btn-social btn-google btn-flat"><i className="fa fa-google-plus"></i> Sign in using
-                            Google+</a>
-                    </div>
-
                     <a href="#">I forgot my password</a><br/>
                     <Link to={'/sign-up'}>
                         Register

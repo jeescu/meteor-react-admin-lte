@@ -12,6 +12,7 @@ export default class SignUp extends Component {
             username: '',
             email: '',
             password: '',
+            repeatPassword: '',
             hasError: false,
             errorMessage: ''
         }
@@ -32,8 +33,25 @@ export default class SignUp extends Component {
         this.setState({password});
     }
 
+    onChangeRepeatPassword(event) {
+        let repeatPassword = event.target.value;
+        this.setState({repeatPassword});
+    }
+
     onSubmit(event) {
         event.preventDefault();
+        // password check
+        if (this.state.password.length < 6) {
+            this.setState({ hasError: true });
+            this.setState({ errorMessage: 'Password should be atleast 6 characters.' });
+            return;
+        }
+
+        if (this.state.password != this.state.repeatPassword ) {
+            this.setState({ hasError: true });
+            this.setState({ errorMessage: 'Password not matched' });
+            return;
+        }
 
         Accounts.createUser({ username: this.state.username, email: this.state.email, password: this.state.password }, function(error) {
             if (error) {
@@ -75,7 +93,7 @@ export default class SignUp extends Component {
                                 <span className="glyphicon glyphicon-lock form-control-feedback"></span>
                         </div>
                         <div className="form-group has-feedback">
-                            <input type="password" className="form-control" placeholder="Retype password" />
+                            <input type="password" onChange={ this.onChangeRepeatPassword.bind(this) } value={ this.state.repeatPassword }  className="form-control" placeholder="Retype password" />
                                 <span className="glyphicon glyphicon-log-in form-control-feedback"></span>
                         </div>
                         <div className="row">
@@ -86,14 +104,7 @@ export default class SignUp extends Component {
                         </div>
                     </form>
 
-                    <div className="social-auth-links text-center">
-                        <p>- OR -</p>
-                        <a href="#" className="btn btn-block btn-social btn-facebook btn-flat"><i className="fa fa-facebook"></i> Sign up using
-                            Facebook</a>
-                        <a href="#" className="btn btn-block btn-social btn-google btn-flat"><i className="fa fa-google-plus"></i> Sign up using
-                            Google+</a>
-                    </div>
-
+                    <br/>
                     <Link to={'/sign-in'}>
                         I already have an account
                     </Link>
