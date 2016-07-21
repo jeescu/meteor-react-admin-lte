@@ -7,7 +7,7 @@ Incorporates the AdminLTE 2.3.3 styles.
 ### Docs
 * [AdminLTE 2](http://almsaeedstudio.com/themes/AdminLTE/documentation/index.html)
 
-### Pre-installed meteor packages
+### Pre-added meteor packages
 * accounts-password
 * accounts-base
 * alanning:roles
@@ -25,8 +25,5 @@ Incorporates the AdminLTE 2.3.3 styles.
   `cd <yourapp> && rm -rf .git`
 
 3. Start coding!
-
-### Contributors
-- Hans Torres ([hanse25](https://github.com/hanseh25))
 
 
