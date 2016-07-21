@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-//components
 import AppHeaderNotificationMenu from './header_menus/app_header_notification_menu.jsx'
 import AppHeaderUserMenu from './header_menus/app_header_user_menu.jsx';
 

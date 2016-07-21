@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { browserHistory } from 'react-router';
 import { Meteor } from 'meteor/meteor';
 
 import CallOutMessage from './warnings/callout_message.jsx';
@@ -29,24 +28,19 @@ export default class SignIn extends Component {
         event.preventDefault();
 
 		Meteor.loginWithPassword({ email: this.state.email }, this.state.password, function(error) {
-
 			if (error) {
 				this.setState({ hasError: true });
-				return;
 			}
-
-        	browserHistory.push('/dashboard');
-
 		}.bind(this));
 	}
 
-    render() {
+	getLoginResponseMessage() {
+		if (this.state.hasError) {
+			return <CallOutMessage description='Forbidden' />
+		}
+	};
 
-    	let getMessage = () => {
-    		if (this.state.hasError) {
-            	return <CallOutMessage description='Forbidden' />
-        	}
-    	};
+    render() {
 
         return (
 			<div className="login-box">
@@ -56,7 +50,7 @@ export default class SignIn extends Component {
 
 				<div className="login-box-body">
 					<p className="login-box-msg">Sign in to start your session</p>
-					{ getMessage() }
+					{ this.getLoginResponseMessage() }
 
 					<form onSubmit={this.onSubmit.bind(this)}>
 						<div className="form-group has-feedback">

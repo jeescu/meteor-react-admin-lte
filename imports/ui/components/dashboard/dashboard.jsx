@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
-// components
 import SideBar from './sidebar/sidebar.jsx';
 import AppHeader from '../layouts/app/app_header.jsx';
 import AppFooter from '../layouts/app/app_footer.jsx';
@@ -12,10 +11,6 @@ export default class Dashboard extends Component {
         super(props);
     }
 
-    getCurrentUser() {
-        return this.props.currentUser;
-    }
-
     getContentView() {
         let contentView = this.props.children;
 
@@ -23,7 +18,6 @@ export default class Dashboard extends Component {
     }
 
     render() {
-        const user = this.getCurrentUser();
 
         const contentMinHeight = {
             minHeight: ((window.innerHeight - 101) + 'px')
@@ -31,8 +25,8 @@ export default class Dashboard extends Component {
 
         return (
             <div className="wrapper">
-                <AppHeader />
-                <SideBar user={ user }/>
+                <AppHeader user={ this.props.currentUser }/>
+                <SideBar user={ this.props.currentUser } users={ this.props.users }/>
                 
                 <div className="content-wrapper" style={ contentMinHeight }>
                     { this.getContentView() }
@@ -46,13 +40,18 @@ export default class Dashboard extends Component {
 }
 
 Dashboard.propTypes = {
-    currentUser: PropTypes.object
+    currentUser: PropTypes.object,
+    users: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default createContainer(() => {
+    /**
+     * Add subscription here
+     */
+    Meteor.subscribe('users');
 
     return {
-        currentUser: Meteor.user()
+        currentUser: Meteor.user(),
+        users: Meteor.users.find().fetch()
     };
-
 }, Dashboard);

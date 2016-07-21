@@ -7,6 +7,16 @@ export default class AppHeaderUserMenu extends Component {
 		super(props);
 	}
 
+	userDisplayName() {
+		const currentUser = this.props.user;
+
+		if (currentUser) {
+			return currentUser.emails[0].address;
+		} else {
+			return 'Alexander Pierce';
+		}
+	};
+
 	logout() {
         Meteor.logout(function() {
             browserHistory.push('/');   
@@ -14,21 +24,12 @@ export default class AppHeaderUserMenu extends Component {
     }
 
 	render() {
-		const currentUser = this.props.currentUser;
-
-		let displayName = () => {
-			if (currentUser) {
-				return currentUser.emails[0].address;
-			} else {
-				return 'Alexander Pierce';
-			}
-		};
 
 		return (
 			<li className="dropdown user user-menu">
 	            <a href="#" className="dropdown-toggle" data-toggle="dropdown">
 	                <img src="/img/user2-160x160.jpg" className="user-image" alt="User Image"/>
-	                <span className="hidden-xs">{ displayName() }</span>
+	                <span className="hidden-xs">{ this.userDisplayName() }</span>
 	            </a>
 
 	            <ul className="dropdown-menu">
@@ -36,7 +37,7 @@ export default class AppHeaderUserMenu extends Component {
 	                <li className="user-header">
 	                    <img src="/img/user2-160x160.jpg" className="img-circle" alt="User Image"/>
 	                    <p>
-							{ displayName() } - Admin
+							{ this.userDisplayName() } - Admin
 	                        <small>Admin since Jun. 2016</small>
 	                    </p>
 	                </li>
@@ -69,15 +70,3 @@ export default class AppHeaderUserMenu extends Component {
 		);
 	}
 }
-
-AppHeaderUserMenu.propTypes = {
-	currentUser: PropTypes.object
-};
-
-export default createContainer(() => {
-
-	return {
-		currentUser: Meteor.user()
-	};
-
-}, AppHeaderUserMenu);

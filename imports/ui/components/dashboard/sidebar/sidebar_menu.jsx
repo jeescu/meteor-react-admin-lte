@@ -22,6 +22,12 @@ export default class SideBarMenu extends Component {
                         <li><a href="#"><i className="fa fa-circle-o"/> Dashboard 2</a></li>
                     </ul>
                 </li>
+                <li>
+                    <Link to = {'#'} >
+                        <i className = "fa fa-users" /> <span> Users </span>
+                        <small className = "label pull-right bg-blue" > { userCount } </small>
+                    </Link>
+                </li>
             </ul>
         );
     }

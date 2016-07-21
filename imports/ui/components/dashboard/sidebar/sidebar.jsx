@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-// components
 import SideBarUserPanel from './sidebar_user_panel';
 import SideBarSearchPanel from './sidebar_search_panel.jsx';
 import SideBarMenu from './sidebar_menu';
@@ -10,26 +9,27 @@ export default class SideBar extends Component {
         super(props);
     }
 
-    render() {
+    userDisplayName() {
         const currentUser = this.props.user;
 
-        let displayName = () => {
-            if (currentUser) {
-                return currentUser.emails[0].address;
-            } else {
-                return 'Alexander Pierce';
-            }
-        };
+        if (currentUser) {
+            return currentUser.emails[0].address;
+        } else {
+            return 'Alexander Pierce';
+        }
+    };
+
+    render() {
 
     	return (
 			<aside className="main-sidebar">
                 <section className="sidebar">
 
-	                <SideBarUserPanel userName={ displayName() } />
+	                <SideBarUserPanel userName={ this.userDisplayName() } />
 
 					<SideBarSearchPanel />
 
-					<SideBarMenu userCount={ this.props.userCount }/>
+					<SideBarMenu userCount={ this.props.users.length }/>
 					
                 </section>
             </aside>
