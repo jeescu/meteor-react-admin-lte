@@ -14,7 +14,7 @@ export default class Home extends Component {
                     <a href="../../index2.html"><b>Admin</b>LTE</a>
                 </div>
 
-                <div className="lockscreen-name text-center"><b>Meteor React Boilerplate</b></div>
+                <div className="lockscreen-name text-center"><b>Meteor React Boilerplate in ES6</b></div>
 
                 <div className="text-center">
                     <Link to={ '/sign-in' }>Sign in </Link>or
