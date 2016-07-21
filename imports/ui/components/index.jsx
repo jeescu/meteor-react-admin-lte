@@ -1,9 +1,11 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
+import { browserHistory } from 'react-router';
 
-import SignIn from './sign_in.jsx';
-import Dashboard from './dashboard/dashboard.jsx';
+import SignIn from './sign_in';
+import SignUp from './sign_up';
+import Dashboard from './dashboard/dashboard';
 
 export default class Index extends Component {
     constructor(props) {
@@ -15,8 +17,16 @@ export default class Index extends Component {
     getChildRoute() {
         let route = this.props.children;
         const user = this.props.currentUser;
+        let defaultTemplate = <SignIn />;
+        let dashboardRoute = <Dashboard />;
 
-        route = user ? (!route ? <Dashboard /> : route) : <SignIn />
+        if (route && route.type.name == 'SignUp') {
+            defaultTemplate = <SignUp />;
+        }
+
+        route = user ? (!route ? dashboardRoute :
+            (route.type.name == 'SignUp' || route.type.name == 'SignIn') ? dashboardRoute : route
+        ) : defaultTemplate;
 
         return route;
     }

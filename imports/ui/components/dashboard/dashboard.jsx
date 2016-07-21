@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
+import { browserHistory } from 'react-router';
 
 import SideBar from './sidebar/sidebar.jsx';
 import AppHeader from '../layouts/app/app_header.jsx';
@@ -15,6 +16,12 @@ export default class Dashboard extends Component {
         let contentView = this.props.children;
 
         return contentView ? contentView : <StatisticView />;
+    }
+
+    componentDidMount() {
+        // i just want to show browser url in '/dashboard'.
+        // So, this component is repeated after index rendered <Dashboard />
+        browserHistory.push('/dashboard');
     }
 
     render() {
