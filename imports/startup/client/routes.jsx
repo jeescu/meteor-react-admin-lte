@@ -10,6 +10,7 @@ import Statistics from '../../ui/components/dashboard/views/statistics/statistic
 export const Routes = () => (
 	<Router history={ browserHistory }>
 		<Route path="/" component={ Index }>
+            <Route path="/home" name="home" component={ Index }/>
 			<Route path="/sign-in" name="signIn" component={ SignIn }/>
 			<Route path="/sign-up" name="signUp" component={ SignUp }/>
 			<Route path="/dashboard" component={ Dashboard }>
