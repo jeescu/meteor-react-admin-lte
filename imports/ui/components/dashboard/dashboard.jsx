@@ -3,8 +3,8 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { browserHistory } from 'react-router';
 
 import SideBar from './sidebar/sidebar.jsx';
-import AppHeader from '../layouts/app/app_header.jsx';
-import AppFooter from '../layouts/app/app_footer.jsx';
+import AppHeader from '../app/app_header.jsx';
+import AppFooter from '../app/app_footer.jsx';
 import StatisticView from './views/statistics/statistics.jsx';
 
 export default class Dashboard extends Component {

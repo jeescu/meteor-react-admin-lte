@@ -6,6 +6,7 @@ import SignIn from '../../ui/components/sign_in';
 import SignUp from '../../ui/components/sign_up';
 import Dashboard from '../../ui/components/dashboard/dashboard.jsx';
 import Statistics from '../../ui/components/dashboard/views/statistics/statistics.jsx';
+import { NotFound } from '../../ui/pages/not_found/not_found';
 
 export const Routes = () => (
 	<Router history={ browserHistory }>
@@ -17,5 +18,6 @@ export const Routes = () => (
 				<Route path="/dashboard" component={ Statistics }/>
 			</Route>
 		</Route>
+		<Route name="not-found" path="*" component={ NotFound } />
 	</Router>
 );
