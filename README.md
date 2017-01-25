@@ -1,4 +1,4 @@
-# Meteor-react adminLTE
+# Meteor + React + AdminLTE
 
 Incorporates the AdminLTE 2.3.3 styles.
 
@@ -24,6 +24,4 @@ Incorporates the AdminLTE 2.3.3 styles.
 
   `cd <yourapp> && rm -rf .git`
 
-3. Start coding!
-
-
+3. Make your own project and start coding!
