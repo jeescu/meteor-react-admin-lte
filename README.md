@@ -1,4 +1,6 @@
 # Meteor + React + AdminLTE
+[![bitHound Code](https://www.bithound.io/github/jeescu/meteor-react-admin-lte/badges/code.svg)](https://www.bithound.io/github/jeescu/meteor-react-admin-lte)
+[![bitHound Dependencies](https://www.bithound.io/github/jeescu/meteor-react-admin-lte/badges/dependencies.svg)](https://www.bithound.io/github/jeescu/meteor-react-admin-lte/master/dependencies/npm)
 
 Incorporates the AdminLTE 2.3.11 styles.
 
