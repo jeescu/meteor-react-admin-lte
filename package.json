@@ -1,6 +1,7 @@
 {
-  "name": "airpayment",
+  "name": "meteor-react-adminlte",
   "private": true,
+  "version": "1.0.0",
   "scripts": {
     "start": "meteor run"
   },
