@@ -7,7 +7,7 @@ import AppHeader from '../app/app_header.jsx';
 import AppFooter from '../app/app_footer.jsx';
 import StatisticView from './views/statistics/statistics.jsx';
 
-export default class Dashboard extends Component {
+ class Dashboard extends Component {
     constructor(props) {
         super(props);
     }

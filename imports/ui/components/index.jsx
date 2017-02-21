@@ -7,7 +7,7 @@ import Home from './home';
 import SignUp from './sign_up';
 import Dashboard from './dashboard/dashboard';
 
-export default class Index extends Component {
+class Index extends Component {
     constructor(props) {
         super(props);
     }
