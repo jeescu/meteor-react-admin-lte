@@ -25,3 +25,4 @@ alanning:roles
 accounts-base@1.2.14
 shell-server
 practicalmeteor:mocha
+dispatch:mocha
