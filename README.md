@@ -32,6 +32,10 @@ Meteor project boilerplate in ES6 and react using AdminLTE styles.
 
 3. Run project.
 
-  `meteor` or `npm start`
+  `npm start`
 
-3. Own the project and start coding!
+4. Testing (port 3002)
+
+  `npm run test`
+
+### Own the project and start coding!

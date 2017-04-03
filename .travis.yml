@@ -6,13 +6,16 @@ node_js:
 before_install:
   - curl "https://install.meteor.com/?release=1.4.2.7"
   - export PATH="$HOME/.meteor:$PATH"
-  - sudo apt-get install python
-  - sudo apt-get install make
-  - sudo apt-get install g++
+
+cache:
+  directories:
+    - node_modules
+    - .meteor
 
 before_script:
   - meteor npm install node-gyp -g
-  - meteor npm install
+  - meteor npm install --dev
 
 script:
+  - meteor npm run test
   - meteor build $HOME/build.tgz
