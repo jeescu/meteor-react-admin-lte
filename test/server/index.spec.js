@@ -1,6 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import { chai } from 'meteor/practicalmeteor:chai';
-const { expect } = chai;
+import { expect } from 'chai';
 
 describe('Server test', () => {
   it('Test case 1', () => {
