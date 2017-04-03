@@ -1,15 +1,16 @@
+sudo: required
 language: node_js
 node_js:
   - 6
   - 7
 
 before_install:
+  - "curl -L https://git.io/ejPSng | /bin/sh"
   - curl "https://install.meteor.com/?release=1.4.2.7"
   - export PATH="$HOME/.meteor:$PATH"
-  - npm install -g node-gyp  
-  - sudo apt-get install python
-  - sudo apt-get install make
-  - sudo apt-get install g++
+
+env:
+  - CXX=g++-4.8
 
 cache:
   directories:
@@ -17,7 +18,7 @@ cache:
     - .meteor
 
 before_script:
-  - meteor npm install --dev
+  - meteor npm install
 
 script:
   - meteor npm run test
