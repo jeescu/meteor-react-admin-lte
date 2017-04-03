@@ -1,10 +1,9 @@
-import React from 'react';
-import { mount } from 'enzyme';
+/* eslint-disable import/no-unresolved */
 import { chai } from 'meteor/practicalmeteor:chai';
-const { expect }  = chai;
+const { expect } = chai;
 
-describe('Server test', function () {
-    it('Test case 1', function () {
-        expect(true).to.true;
-    });
+describe('Server test', () => {
+  it('Test case 1', () => {
+    expect(true).to.equal(true);
+  });
 });

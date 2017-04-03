@@ -1,12 +1,13 @@
+/* eslint-disable import/no-unresolved */
 import { Meteor } from 'meteor/meteor';
-import { Accounts } from 'meteor/accounts-base'
+import { Accounts } from 'meteor/accounts-base';
 
-let adminUser = {
-    username: "admin",
-    email: "admin@mail.com",
-    password: "abc123",
+const adminUser = {
+  username: 'admin',
+  email: 'admin@mail.com',
+  password: 'abc123',
 };
 
 if (!Meteor.users.findOne()) {
-    Accounts.createUser(adminUser);
+  Accounts.createUser(adminUser);
 }
