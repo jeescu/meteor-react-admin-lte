@@ -5,4 +5,4 @@ import './lib/base/lib/admin-lte/dist/js/app.min.js';
 import './main.html';
 
 // Main JSX
-import '/imports/startup/client/index.jsx';
+import '/imports/startup/client/index';

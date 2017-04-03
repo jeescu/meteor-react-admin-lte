@@ -6,7 +6,7 @@
     "start": "meteor run",
     "test": "TEST_BROWSER_DRIVER=phantomjs meteor test --once --driver-package dispatch:mocha",
     "test:watch": "TEST_WATCH=1 TEST_BROWSER_DRIVER=phantomjs meteor test --driver-package dispatch:mocha",
-    "lint": "eslint imports public server test"
+    "lint": "eslint --ignore-path .eslintignore ."
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
