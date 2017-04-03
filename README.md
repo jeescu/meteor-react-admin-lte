@@ -2,19 +2,23 @@
 [![bitHound Code](https://www.bithound.io/github/jeescu/meteor-react-admin-lte/badges/code.svg)](https://www.bithound.io/github/jeescu/meteor-react-admin-lte)
 [![bitHound Dependencies](https://www.bithound.io/github/jeescu/meteor-react-admin-lte/badges/dependencies.svg)](https://www.bithound.io/github/jeescu/meteor-react-admin-lte/master/dependencies/npm)
 
-Incorporates the AdminLTE 2.3.11 styles.
+Meteor project boilerplate in ES6 and react using AdminLTE styles.
 
 ![Boilerplate screenshot](https://raw.githubusercontent.com/jeescu/meteor-react-admin-lte/master/public/img/Screenshot%20from%202016-06-24%2009%3A52%3A37.png)
 
-### Read the documentation for your reference.
-* [AdminLTE 2](http://almsaeedstudio.com/themes/AdminLTE/documentation/index.html)
+### Read the AdminLTE documentation.
+* [AdminLTE 2.3.11](http://almsaeedstudio.com/themes/AdminLTE/documentation/index.html)
+
+### Prerequisites
+* Node v6.9 or higher
+* Npm v3 or higher
+* Meteor v1.4.2.7
 
 ### Pre-added meteor packages
 * accounts-password
 * accounts-base
 * alanning:roles
 * react-meteor-data
-
 
 ### Installation
 
@@ -28,6 +32,6 @@ Incorporates the AdminLTE 2.3.11 styles.
 
 3. Run project.
 
-  `meteor`
+  `meteor` or `npm start`
 
-3. Make your own project and start coding!
+3. Own the project and start coding!
