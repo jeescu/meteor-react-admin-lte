@@ -1,6 +1,7 @@
 # Meteor + React + AdminLTE
 [![bitHound Code](https://www.bithound.io/github/jeescu/meteor-react-admin-lte/badges/code.svg)](https://www.bithound.io/github/jeescu/meteor-react-admin-lte)
 [![bitHound Dependencies](https://www.bithound.io/github/jeescu/meteor-react-admin-lte/badges/dependencies.svg)](https://www.bithound.io/github/jeescu/meteor-react-admin-lte/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/jeescu/meteor-react-admin-lte/badges/devDependencies.svg)](https://www.bithound.io/github/jeescu/meteor-react-admin-lte/master/dependencies/npm)
 
 Meteor project boilerplate in ES6 and react using AdminLTE styles.
 
