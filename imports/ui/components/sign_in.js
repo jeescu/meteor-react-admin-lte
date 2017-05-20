@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 
 import CallOutMessage from './warnings/callout_message';
 
@@ -13,6 +13,7 @@ export default class SignIn extends Component {
       email: '',
       password: '',
       hasError: false,
+      isLoggingIn: false,
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -30,10 +31,16 @@ export default class SignIn extends Component {
 
   onSubmit(event) {
     event.preventDefault();
-    
+    this.setState({ isLoggingIn: true, hasError: false });
+
     Meteor.loginWithPassword({ email: this.state.email }, this.state.password, (error) => {
+      this.setState({ isLoggingIn: false });
+      
       if (error) {
         this.setState({ hasError: true });
+      } else {
+        // successful log in
+        browserHistory.push('/dashboard');
       }
     });
   }
@@ -47,6 +54,17 @@ export default class SignIn extends Component {
     return message;
   }
 
+  displayLoggingIn() {
+    let loading = '';
+    if (this.state.isLoggingIn) {
+      loading = (<div className="login-box-msg">
+        <i className="fa fa-cog fa-spin fa-2x fa-fw" />
+      </div>);
+    }
+
+    return loading;
+  }
+
   render() {
     return (
       <div className="login-box">
@@ -56,6 +74,7 @@ export default class SignIn extends Component {
 
         <div className="login-box-body">
           <p className="login-box-msg">Sign in to start your session</p>
+          {this.displayLoggingIn()}
           {this.getLoginResponseMessage()}
 
           <form onSubmit={this.onSubmit}>
@@ -69,7 +88,7 @@ export default class SignIn extends Component {
               />
               <span className="glyphicon glyphicon-envelope form-control-feedback" />
             </div>
-            
+
             <div className="form-group has-feedback">
               <input
                 type="password"
@@ -92,7 +111,7 @@ export default class SignIn extends Component {
 
           <a href="#">I forgot my password</a><br />
           <Link to={'/sign-up'}>
-              Register
+            Register
           </Link>
 
         </div>
