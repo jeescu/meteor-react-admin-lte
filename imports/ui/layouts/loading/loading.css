@@ -1,0 +1,6 @@
+.loading-spinner {
+    color: #367fa9 !important;
+    position: absolute;
+    margin-top: -25px;    
+    top: 50%;
+}
