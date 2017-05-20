@@ -2,46 +2,29 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
-
-import SignIn from './sign_in';
-import Home from './home';
-import SignUp from './sign_up';
-import Dashboard from './dashboard/dashboard';
+import Loading from '../layouts/loading/loading';
 
 class Index extends Component {
   /**
    * Decides route when user is authenticated or not
    */
-  getChildRoute() {
-    let childRoute = this.props.children;
-    const user = this.props.currentUser;
-    let defaultChild = <Home />;
-    const dashboardRoute = <Dashboard />;
+  getChildView() {
+    const user = this.props.currentUser;    
+    let childView = this.props.children;
 
-    if (childRoute) {
-      defaultChild = (childRoute.type.name === 'SignIn') ? <SignIn /> : defaultChild;
-      defaultChild = (childRoute.type.name === 'SignUp') ? <SignUp /> : defaultChild;
+    // undefined - there is a cached user but not yet verified
+    // null - no cached user and not authenticated
+    if (user === undefined) {
+      childView = <Loading />;
     }
 
-    if (user) {
-      if (!childRoute) {
-        childRoute = dashboardRoute;
-      } else {
-        if (childRoute.type.name === 'SignUp' || childRoute.type.name === 'SignIn') {
-          childRoute = dashboardRoute;
-        }
-      }
-    } else {
-      childRoute = defaultChild;
-    }
-
-    return childRoute;
+    return childView;
   }
 
   render() {
     return (
       <div className="app-layout">
-        {this.getChildRoute()}
+        {this.getChildView()}
       </div>
     );
   }
