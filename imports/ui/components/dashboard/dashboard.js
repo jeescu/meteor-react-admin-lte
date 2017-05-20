@@ -2,7 +2,6 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
-import { browserHistory } from 'react-router';
 
 import SideBar from './sidebar/sidebar';
 import AppHeader from '../app/app_header';
@@ -10,12 +9,6 @@ import AppFooter from '../app/app_footer';
 import StatisticView from './views/statistics/statistics';
 
 class Dashboard extends Component {
-  componentDidMount() {
-    // i just want to show browser url in '/dashboard'.
-    // So, this component is repeated after index rendered <Dashboard />
-    browserHistory.push('/dashboard');
-  }
-
   getContentView() {
     return this.props.children && <StatisticView />;
   }
