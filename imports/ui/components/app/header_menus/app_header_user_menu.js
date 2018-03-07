@@ -1,6 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import { Meteor } from 'meteor/meteor';
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { browserHistory } from 'react-router';
 
 export default class AppHeaderUserMenu extends Component {
