@@ -1,7 +1,7 @@
 import React from 'react';
 import './not_found.css';
 
-export const NotFound = () => (
+const NotFound = () => (
   <div className="error-page">
     <h2 className="headline text-yellow"> 404</h2>
 
@@ -12,3 +12,5 @@ export const NotFound = () => (
     </div>
   </div>
 );
+
+export default NotFound;

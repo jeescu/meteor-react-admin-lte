@@ -9,7 +9,7 @@ import SignIn from '../../ui/components/sign_in';
 import SignUp from '../../ui/components/sign_up';
 import Dashboard from '../../ui/components/dashboard/dashboard';
 import Statistics from '../../ui/components/dashboard/views/statistics/statistics';
-import { NotFound } from '../../ui/pages/not_found/not_found';
+import NotFound from '../../ui/pages/not_found/not_found';
 
 export const requireAuth = (nextState, replace) => {
   // No user is authenticated redirect ro index
