@@ -1,6 +1,12 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const ContentHeader = ({ name, description, breadcrumbIcon, breadcrumb }) => (
+const ContentHeader = ({
+  name,
+  description,
+  breadcrumbIcon,
+  breadcrumb,
+}) => (
   <section className="content-header">
     <h1>
       {name}

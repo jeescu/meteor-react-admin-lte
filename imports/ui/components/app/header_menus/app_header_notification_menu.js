@@ -4,20 +4,19 @@ import React, { Component } from 'react';
 import AppHeaderNotificationMenuItem from './app_header_notification_menu_item';
 
 export default class AppHeaderNotificationMenu extends Component {
-
   getNotificationItems() {
-    const notificationItems = [
+    this.notificationItems = [
       { _id: '1', classNames: 'fa fa-users text-aqua', message: '5 new members joined today' },
       { _id: '2', classNames: 'fa fa-warning text-yellow', message: 'Very long description here' },
     ];
-    /* eslint-disable no-underscore-dangle*/
-    return notificationItems.map(item => (
+
+    /* eslint-disable no-underscore-dangle */
+    return this.notificationItems.map(item => (
       <AppHeaderNotificationMenuItem
         key={item._id}
         classNames={item.classNames}
         message={item.message}
-      />)
-    );
+      />));
   }
 
   render() {
@@ -37,6 +36,6 @@ export default class AppHeaderNotificationMenu extends Component {
           <li className="footer"><a href="#">View all</a></li>
         </ul>
       </li>
-		);
+    );
   }
 }

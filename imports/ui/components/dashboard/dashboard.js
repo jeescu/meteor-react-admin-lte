@@ -1,7 +1,8 @@
 /* eslint-disable import/no-unresolved */
 import { Meteor } from 'meteor/meteor';
-import React, { Component, PropTypes } from 'react';
-import { createContainer } from 'meteor/react-meteor-data';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withTracker } from 'meteor/react-meteor-data';
 
 import SideBar from './sidebar/sidebar';
 import AppHeader from '../app/app_header';
@@ -26,11 +27,11 @@ class Dashboard extends Component {
         <SideBar user={this.props.currentUser} users={this.props.users} />
         
         <div className="content-wrapper" style={contentMinHeight} >
-            {this.getContentView()}
+          { this.getContentView() }
         </div>
 
         <AppFooter />
-        <div className="control-sidebar-bg"></div>
+        <div className="control-sidebar-bg" />
       </div>
     );
   }
@@ -42,7 +43,7 @@ Dashboard.propTypes = {
   users: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default createContainer(() => {
+export default withTracker(() => {
   /**
    * Add subscription here
    */
@@ -52,4 +53,4 @@ export default createContainer(() => {
     currentUser: Meteor.user(),
     users: Meteor.users.find().fetch(),
   };
-}, Dashboard);
+})(Dashboard);

@@ -57,9 +57,11 @@ export default class SignIn extends Component {
   displayLoggingIn() {
     let loading = '';
     if (this.state.isLoggingIn) {
-      loading = (<div className="login-box-msg">
-        <i className="fa fa-cog fa-spin fa-2x fa-fw" />
-      </div>);
+      loading = (
+        <div className="login-box-msg">
+          <i className="fa fa-cog fa-spin fa-2x fa-fw" />
+        </div>
+      );
     }
 
     return loading;
@@ -86,7 +88,7 @@ export default class SignIn extends Component {
                 onChange={this.onChangeEmail}
                 value={this.state.email}
               />
-              <span className="glyphicon glyphicon-envelope form-control-feedback" />
+              <span className="fa fa-envelope form-control-feedback" />
             </div>
 
             <div className="form-group has-feedback">
@@ -97,7 +99,7 @@ export default class SignIn extends Component {
                 onChange={this.onChangePassword}
                 value={this.state.password}
               />
-              <span className="glyphicon glyphicon-lock form-control-feedback" />
+              <span className="fa fa-lock form-control-feedback" />
             </div>
 
             <div className="row">
@@ -110,7 +112,7 @@ export default class SignIn extends Component {
           </form>
 
           <a href="#">I forgot my password</a><br />
-          <Link to={'/sign-up'}>
+          <Link to="/sign-up">
             Register
           </Link>
 
