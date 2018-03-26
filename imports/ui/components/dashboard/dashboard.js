@@ -2,7 +2,7 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { createContainer } from 'meteor/react-meteor-data';
+import { withTracker } from 'meteor/react-meteor-data';
 
 import SideBar from './sidebar/sidebar';
 import AppHeader from '../app/app_header';
@@ -43,7 +43,7 @@ Dashboard.propTypes = {
   users: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default createContainer(() => {
+export default withTracker(() => {
   /**
    * Add subscription here
    */
@@ -53,4 +53,4 @@ export default createContainer(() => {
     currentUser: Meteor.user(),
     users: Meteor.users.find().fetch(),
   };
-}, Dashboard);
+})(Dashboard);
