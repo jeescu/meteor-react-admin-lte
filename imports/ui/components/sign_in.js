@@ -88,7 +88,7 @@ export default class SignIn extends Component {
                 onChange={this.onChangeEmail}
                 value={this.state.email}
               />
-              <span className="glyphicon glyphicon-envelope form-control-feedback" />
+              <span className="fa fa-envelope form-control-feedback" />
             </div>
 
             <div className="form-group has-feedback">

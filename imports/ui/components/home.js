@@ -14,7 +14,7 @@ const Home = () => (
       <Link to="/sign-up"> Register</Link>
     </div>
     <div className="lockscreen-footer text-center">
-      Copyright © 2014-2015&nbsp;
+      Copyright © 2014-2017&nbsp;
       <b><a href="http://almsaeedstudio.com" className="text-black">Almsaeed Studio</a></b>
       <br />
       All rights reserved
