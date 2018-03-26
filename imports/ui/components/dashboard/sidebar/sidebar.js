@@ -6,6 +6,10 @@ import SideBarSearchPanel from './sidebar_search_panel';
 import SideBarMenu from './sidebar_menu';
 
 export default class SideBar extends Component {
+  componentDidMount() {
+    $('.sidebar-menu').tree();
+  }
+
   userDisplayName() {
     const currentUser = this.props.user;
     let name = 'Alexander Pierce';

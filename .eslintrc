@@ -10,6 +10,11 @@
     "mocha": true
   },
   "rules": {
-    "no-trailing-spaces": 0
+    "no-trailing-spaces": 0,
+    "react/jsx-filename-extension": 0,
+    "react/forbid-prop-types": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "import/extensions": 0,
+    "react/require-default-props": 0
   }
 }

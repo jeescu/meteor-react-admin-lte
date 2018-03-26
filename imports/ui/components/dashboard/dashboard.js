@@ -27,11 +27,11 @@ class Dashboard extends Component {
         <SideBar user={this.props.currentUser} users={this.props.users} />
         
         <div className="content-wrapper" style={contentMinHeight} >
-            {this.getContentView()}
+          { this.getContentView() }
         </div>
 
         <AppFooter />
-        <div className="control-sidebar-bg"></div>
+        <div className="control-sidebar-bg" />
       </div>
     );
   }

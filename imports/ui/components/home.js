@@ -10,8 +10,8 @@ const Home = () => (
     <div className="lockscreen-name text-center"><b>Meteor React Boilerplate in ES6</b></div>
 
     <div className="text-center">
-      <Link to={'/sign-in'}>Sign in </Link>or
-      <Link to={'/sign-up'}> Register</Link>
+      <Link to="/sign-in">Sign in </Link>or
+      <Link to="/sign-up"> Register</Link>
     </div>
     <div className="lockscreen-footer text-center">
       Copyright © 2014-2015&nbsp;

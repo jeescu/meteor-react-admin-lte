@@ -97,7 +97,7 @@ export default class SignUp extends Component {
                 className="form-control"
                 placeholder="Username"
               />
-              <span className="glyphicon glyphicon-user form-control-feedback"></span>
+              <span className="glyphicon glyphicon-user form-control-feedback" />
             </div>
             <div className="form-group has-feedback">
               <input
@@ -107,7 +107,7 @@ export default class SignUp extends Component {
                 className="form-control"
                 placeholder="Email"
               />
-              <span className="glyphicon glyphicon-envelope form-control-feedback"></span>
+              <span className="glyphicon glyphicon-envelope form-control-feedback" />
             </div>
             <div className="form-group has-feedback">
               <input
@@ -117,7 +117,7 @@ export default class SignUp extends Component {
                 className="form-control"
                 placeholder="Password"
               />
-              <span className="glyphicon glyphicon-lock form-control-feedback"></span>
+              <span className="glyphicon glyphicon-lock form-control-feedback" />
             </div>
             <div className="form-group has-feedback">
               <input
@@ -127,7 +127,7 @@ export default class SignUp extends Component {
                 className="form-control"
                 placeholder="Retype password"
               />
-              <span className="glyphicon glyphicon-log-in form-control-feedback"></span>
+              <span className="glyphicon glyphicon-log-in form-control-feedback" />
             </div>
             <div className="row">
               <div className="col-xs-4">
@@ -139,7 +139,7 @@ export default class SignUp extends Component {
           </form>
 
           <br />
-          <Link to={'/sign-in'}>
+          <Link to="/sign-in">
               I already have an account
           </Link>
 
