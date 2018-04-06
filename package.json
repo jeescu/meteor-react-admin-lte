@@ -4,7 +4,6 @@
   "version": "2.0.0",
   "scripts": {
     "start": "meteor run",
-    "pretest": "npm run lint --silent",
     "test": "TEST_BROWSER_DRIVER=phantomjs meteor test --once --driver-package meteortesting:mocha",
     "test:watch": "TEST_BROWSER_DRIVER=phantomjs TEST_WATCH=1 meteor test --driver-package meteortesting:mocha",
     "lint": "eslint --ignore-path .eslintignore ."
