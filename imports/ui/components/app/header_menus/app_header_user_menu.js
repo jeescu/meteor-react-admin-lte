@@ -2,12 +2,16 @@
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { browserHistory } from 'react-router';
 
 export default class AppHeaderUserMenu extends Component {
-  static logout() {
+  constructor(props) {
+    super(props);
+    this.logout = this.logout.bind(this);
+  }
+
+  logout() {
     Meteor.logout(() => {
-      browserHistory.push('/');
+      this.props.history.push('/');
     });
   }
 
@@ -66,7 +70,7 @@ export default class AppHeaderUserMenu extends Component {
               <a href="#" className="btn btn-default btn-flat">Profile</a>
             </div>
             <div className="pull-right">
-              <a href="#" className="btn btn-default btn-flat" onClick={AppHeaderUserMenu.logout}>Sign out</a>
+              <a href="#" className="btn btn-default btn-flat" onClick={this.logout}>Sign out</a>
             </div>
           </li>
 
@@ -78,4 +82,5 @@ export default class AppHeaderUserMenu extends Component {
 
 AppHeaderUserMenu.propTypes = {
   user: PropTypes.object,
+  history: PropTypes.object,
 };

@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import { Accounts } from 'meteor/accounts-base';
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import CallOutMessage from './warnings/callout_message';
 
