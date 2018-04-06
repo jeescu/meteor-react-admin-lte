@@ -11,7 +11,6 @@ configure({ adapter: new Adapter() });
 describe('Home', () => {
   it('should render home layout', () => {
     const wrapper = shallow(<Home />);
-    console.log(wrapper.find('.lockscreen-wrapper').length);
     expect(wrapper.find('.lockscreen-wrapper').length).to.equal(1);
   });
 });
