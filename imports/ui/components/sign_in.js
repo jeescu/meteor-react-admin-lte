@@ -1,10 +1,11 @@
 /* eslint-disable import/no-unresolved */
 import { Meteor } from 'meteor/meteor';
 import React, { Component } from 'react';
-import { Link, browserHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import CallOutMessage from './warnings/callout_message';
 
+/* eslint-disable react/prop-types */
 export default class SignIn extends Component {
   constructor(props) {
     super(props);
@@ -32,15 +33,14 @@ export default class SignIn extends Component {
   onSubmit(event) {
     event.preventDefault();
     this.setState({ isLoggingIn: true, hasError: false });
-
+    
     Meteor.loginWithPassword({ email: this.state.email }, this.state.password, (error) => {
       this.setState({ isLoggingIn: false });
       
       if (error) {
         this.setState({ hasError: true });
       } else {
-        // successful log in
-        browserHistory.push('/dashboard');
+        this.props.history.push('/dashboard');
       }
     });
   }

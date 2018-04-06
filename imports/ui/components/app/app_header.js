@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import AppHeaderNotificationMenu from './header_menus/app_header_notification_menu';
 import AppHeaderUserMenu from './header_menus/app_header_user_menu';
 
-const AppHeader = () => (
+const AppHeader = ({ user, history }) => (
   <header className="main-header">
 
     <a href="#" className="logo">
@@ -20,7 +21,7 @@ const AppHeader = () => (
         <ul className="nav navbar-nav">
 
           <AppHeaderNotificationMenu />
-          <AppHeaderUserMenu />
+          <AppHeaderUserMenu user={user} history={history} />
 
         </ul>
       </div>
@@ -28,5 +29,10 @@ const AppHeader = () => (
 
   </header>
 );
+
+AppHeader.propTypes = {
+  user: PropTypes.object,
+  history: PropTypes.object,
+};
 
 export default AppHeader;
