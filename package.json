@@ -9,7 +9,7 @@
     "lint": "eslint --ignore-path .eslintignore ."
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.40",
+    "@babel/runtime": "^7.0.0-beta.55",
     "babel-runtime": "^6.23.0",
     "bcrypt": "^1.0.3",
     "classnames": "^2.2.5",
